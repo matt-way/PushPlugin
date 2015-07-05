@@ -3,6 +3,8 @@ package com.plugin.gcm;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ruffle.app.*;
+
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -14,6 +16,8 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.android.gcm.GCMBaseIntentService;
+
+
 
 @SuppressLint("NewApi")
 public class GCMIntentService extends GCMBaseIntentService {
@@ -101,7 +105,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		NotificationCompat.Builder mBuilder =
 			new NotificationCompat.Builder(context)
 				.setDefaults(defaults)
-				.setSmallIcon(context.getApplicationInfo().icon)
+				.setSmallIcon(com.ruffle.app.R.drawable.notification)
 				.setWhen(System.currentTimeMillis())
 				.setContentTitle(extras.getString("title"))
 				.setTicker(extras.getString("title"))
